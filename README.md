@@ -117,9 +117,9 @@ colcon build --symlink-install
 
 - **VSCode extension:** fails with KeyboardInterrupt, as VSCode tries to activate the CONDA environment AFTER launching the script.
   - Solution:
-    - VSCode Configuration:
-      - Set "python.useEnvironmentsExtension": true.
-      - set "python-envs.terminal.autoActivationType" to "shellStartup".
+    - VSCode -> Preferences -> Settings -> Extensions:
+      - Python: Mark "Use Environments Extension".
+      - Python Environments: set "Auto Activation Type" to "shellStartup".
 
 - **combined_action:**
   - Problem: _pickle.UnpicklingError: invalid load key, 'v'.
