@@ -96,7 +96,7 @@ source install/setup.bash
 ros2 launch edutainment_emdb edutainment_launch.py |& tee ~/edutainment_output.txt
 ```
 
-- Open RoboboSim in another terminal:
+- Launch RoboboSim in another terminal, sourcing the experiment file first:
 
 ```bash
 source /opt/ros/humble/setup.bash
@@ -106,16 +106,6 @@ cd ~/progtutor/robobosim-pillar/pillar-linux
 ```
 
 ## Troubleshooting
-
-- **Problems with library dependencies:**
-  - Download the requirements_pip_pillar.txt file and install them.
-    - **WARNING** this method is not fully tested and it doesn't replace the manual installation of the required software.
-
-```bash
-conda activate pillar-progtutor
-python3 -m pip install --upgrade -r requirements_pip_pillar.txt
-python3 -m pip install mediapipe==0.10.21 --no-deps --upgrade
-```
 
 - **e-MDB**: build fails with CMake Error.
   - Solution: make sure to source setup.bash before build.
@@ -133,12 +123,20 @@ colcon build --symlink-install
 
 - **combined_action:**
   - Problem: _pickle.UnpicklingError: invalid load key, 'v'.
-  - Solución: install and configure git lfs, and clone repos from GitHub Desktop or VSCode.
-
+    - Solution: install and configure git lfs, and clone repos from GitHub Desktop or VSCode.
   - Problem: ImportError: cannot import name 'solutions' from 'mediapipe' (/home/ubuntu/miniconda3/envs/pillar-progtutor/lib/python3.12/site-packages/mediapipe/__init__.py)
-  - Solution: python3 -m pip install mediapipe==0.10.21 --no-deps --upgrade
-
+    - Solution: python3 -m pip install mediapipe==0.10.21 --no-deps --upgrade
   - Problem: [depthai] [warning] Insufficient permissions to communicate with X_LINK_UNBOOTED device having name "3.4". Make sure udev rules are set
-  - Solution:
-    echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="03e7", MODE="0666"' | sudo tee /etc/udev/rules.d/80-movidius.rules
-    sudo udevadm control --reload-rules && sudo udevadm trigger
+    - Solution:
+      - echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="03e7", MODE="0666"' | sudo tee /etc/udev/rules.d/80-movidius.rules
+      - sudo udevadm control --reload-rules && sudo udevadm trigger
+
+- **Problems with library dependencies:**
+  - Download the requirements_pip_pillar.txt file and install them.
+    - **WARNING** this method is not fully tested and it doesn't replace the manual installation of the required software.
+
+```bash
+conda activate pillar-progtutor
+python3 -m pip install --upgrade -r requirements_pip_pillar.txt
+python3 -m pip install mediapipe==0.10.21 --no-deps --upgrade
+```
