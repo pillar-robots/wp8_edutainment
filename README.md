@@ -1,6 +1,6 @@
 # wp8_edutainment
 
-Meta repository for the WP8 Edutainment use case.
+Meta repository for the WP8 Edutainment use case of the PILLAR project.
 
 ## Hardware requirements
 
@@ -30,7 +30,7 @@ conda activate pillar-progtutor
 conda install -n pillar-progtutor python=3.12.4
 ```
 
-**IMPORTANT:** the following steps asume that you are in the "~/progtutor" folder and have the environment active. Install the rest of the dependencies on it:
+**IMPORTANT:** the following steps assume that you are in the "~/progtutor" folder and have the environment active. Install the rest of the dependencies on it:
 
 - Git LFS: <https://git-lfs.com/>
 - DepthAI: <https://docs.luxonis.com/software-v3/depthai>
