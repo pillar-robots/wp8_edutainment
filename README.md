@@ -53,6 +53,8 @@ depthai-viewer # Open depthai-viewer to let it install its dependancies.
 - robobopy: <https://github.com/mintforpeople/robobo-programming/wiki/python-doc#setting-up-your-computer>
 - ProgTutor VSCode extension: <https://progtutor.citic.udc.es/docs/progtutor-vscode-eng>
 - RoboboSim: <https://progtutor.citic.udc.es/docs/pillar-linux>
+- (Optional) There is also a baseline version of the RoboboSim that doesn't use the e-MDB + edutainmet_emdb:
+  - RoboboSim BASELINE: <https://progtutor.citic.udc.es/docs/pillar-baseline-linux>
 
 ```bash
 mkdir -p ~/progtutor/robobosim-pillar
