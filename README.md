@@ -86,6 +86,16 @@ which python3 # Copy this path, for example: /home/ubuntu/miniconda3/envs/pillar
   - "Robobo IP": paste here your Robobo IP shown in the Robobo app.
   - "Test Connection": check your communication with the Robobo robot.
 
+## Purpose Alignment
+
+- To use Purpose Alignment, install OpenAI and configure the API_KEY:
+
+```bash
+python3 -m pip install openai
+echo "export OPENAI_API_KEY='Insert_your_API_KEY_here'" >> ~/.bashrc
+source ~/.bashrc
+```
+
 ## Launch the experiment
 
 - Launch the edutainment_emdb experiment in one terminal:
@@ -96,6 +106,8 @@ cd ~/eMDB_ws/
 colcon build --packages-select edutainment_emdb --symlink-install
 source install/setup.bash
 ros2 launch edutainment_emdb edutainment_launch.py |& tee ~/edutainment_output.txt
+or
+ros2 launch edutainment_emdb edutainment_alignment_launch.py |& tee ~/edutainment_alignment_output.txt
 ```
 
 - Launch RoboboSim in another terminal, sourcing the experiment file first:
