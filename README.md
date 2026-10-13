@@ -14,7 +14,7 @@ Meta repository for the WP8 Edutainment use case of the PILLAR project.
 
 - Ubuntu 22.04.5 LTS (Jammy Jellyfish): <https://releases.ubuntu.com/jammy/>
 - ROS 2 Humble: <https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html>
-- e-MDB: <https://docs.pillar-robots.eu/en/latest/how_to_do/how_to_install.html>
+- e-MDB version: <https://github.com/pillar-robots/wp8_emdb.git>
 - edutainmet_emdb: <https://github.com/pillar-robots/edutainment_emdb.git>
 - VSCode: <https://code.visualstudio.com/docs/setup/linux>
 - Miniconda: <https://www.anaconda.com/docs/getting-started/miniconda/install/linux-install>
@@ -102,7 +102,7 @@ source ~/.bashrc
 
 ```bash
 source /opt/ros/humble/setup.bash
-cd ~/eMDB_ws/
+cd ~/wp8_emdb/
 colcon build --packages-select edutainment_emdb --symlink-install
 source install/setup.bash
 ros2 launch edutainment_emdb edutainment_launch.py |& tee ~/edutainment_output.txt
@@ -114,7 +114,7 @@ ros2 launch edutainment_emdb edutainment_alignment_launch.py |& tee ~/edutainmen
 
 ```bash
 source /opt/ros/humble/setup.bash
-source ~/eMDB_ws/install/setup.bash
+source ~/wp8_emdb/install/setup.bash
 cd ~/progtutor/robobosim-pillar/pillar-linux
 ./RoboboSim\ PILLAR\ Linux.x86_64 -logFile ~/robobosim-pillar.log
 ```
